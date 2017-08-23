@@ -1,3 +1,40 @@
+*This repo is a WIP, the README is intended to clarify how it will be used, before actually providing all the features described.*
+
+# Secure and reusable contracts for a dutch auction token sale
+
+You can use this repository to reliably deploy a dutch auction **identical** to the [Gnosis token sale contract](https://etherscan.io/address/0x1d0dcc8d8bcafa8e8502beaeef6cbd49d3affcdc).
+
+These contracts have been thoroughly audited, and battle tested on the Ethereum blockchain.
+
+## Safe Modifications
+
+It is generally _UNSAFE_ to modify _mechanisms_, such as lopython -m unittest discover contracts
+gic, control flow, calculations, and other aspects of the solidity code.
+
+It is generally safe to modify _parameters_, such as starting price, total tokens, timelines, etc. These parameters are specified in the `tokenAuction.json` file, thus you should restrict any changes made to this file.
+
+Parameters are documented in that file.
+
+## Deployment
+
+First deploy to a testnet to ensure that your configuration will deploy bytecode identical to the original [Gnosis token sale contract](https://etherscan.io/address/0x1d0dcc8d8bcafa8e8502beaeef6cbd49d3affcdc#code).
+
+`truffle migrate --network rinkeby`
+
+The [migrations](./migrations/02_..) script will compare your deployed bytecode to the code at address  `0x1d0dcc8d8bcafa8e8502beaeef6cbd49d3affcdc`. If it is successful, you can continue to deploy to the main ethereum network. If not, see the [Troubleshooting](./README.md#troubleshooting) section below.
+
+
+To deploy to the main ethereum network, run `truffle migrate --network ethereum`. As with the testnet deployment,this will verify that the deployed bytecode is identical to the original.
+
+### Troubleshooting
+
+* truffle version?
+* compiler version should be `v0.4.10+commit.f0d539ae`
+  * Disable optimizer // Oh shit, truffle doesn't allow a custom compiler, or disabling the optimizer!!??!!
+  * But... maybe we can use the `0.4.10` version, and somehow disable the optimizer ourselves? But then it's getting "super hacky" again.
+
+
+
 ## The multisig wallet files are from https://github.com/ConsenSys/MultiSigWallet/tree/004da438880fbdc23ab345dca7d086b0e01abb6d/contracts/solidity
 
 ## This security_audit branch has been simplified for the Gnosis token launch (and is what will be deployed).  Some of the README below is relevant, some of it is not or is outdated.
@@ -27,7 +64,7 @@ A placeholder contract for a future DAO governance contract. Offers interfaces t
 Implements the Dutch auction used by Gnosis for the token launch. Accepts bids using bid function until funding goal or stop price is reached. After the auction is completed, every successful bidder can claim his tokens using the claimTokens function.
 
 #### [DAOToken.sol](contracts/solidity/DAO/DAOToken.sol)
-Gnosis token (GNO) contract. At deployment all tokens are assigned to the auction contract. Auction contract transfers tokens to bidders according to their bid and final token price. 
+Gnosis token (GNO) contract. At deployment all tokens are assigned to the auction contract. Auction contract transfers tokens to bidders according to their bid and final token price.
 Tokens can be traded after the auction is over and one week passed.
 
 ### Event Factory
