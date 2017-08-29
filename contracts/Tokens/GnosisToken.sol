@@ -1,5 +1,5 @@
 pragma solidity 0.4.10;
-import "Tokens/StandardToken.sol";
+import "./StandardToken.sol";
 
 
 /// @title Gnosis token contract

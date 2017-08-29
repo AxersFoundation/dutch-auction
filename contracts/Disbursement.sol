@@ -1,5 +1,5 @@
 pragma solidity 0.4.10;
-import "Tokens/AbstractToken.sol";
+import "./Tokens/AbstractToken.sol";
 
 
 /// @title Disbursement contract - allows to distribute tokens over time.

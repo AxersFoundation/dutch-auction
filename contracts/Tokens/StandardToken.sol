@@ -1,5 +1,5 @@
 pragma solidity 0.4.10;
-import "Tokens/AbstractToken.sol";
+import "./AbstractToken.sol";
 
 
 /// @title Standard token contract - Standard token interface implementation.

@@ -1,5 +1,5 @@
 pragma solidity 0.4.10;
-import "DO/AbstractDutchAuction.sol";
+import "./AbstractDutchAuction.sol";
 
 
 /// @title Claim proxy contract - allows to claim GNO tokens for multiple receivers at once.
