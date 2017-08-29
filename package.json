@@ -1,0 +1,22 @@
+{
+  "name": "secure-dutch-auction",
+  "version": "0.1.0",
+  "description": "Secure, reusable smart contracts for a dutch auction based on the Gnosis token sale",
+  "main": " ",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maurelian/gnosis-contracts.git"
+  },
+  "author": "maurelian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maurelian/gnosis-contracts/issues"
+  },
+  "homepage": "https://github.com/maurelian/gnosis-contracts#readme"
+}
